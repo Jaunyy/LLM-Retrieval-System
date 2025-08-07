@@ -36,13 +36,26 @@ To evaluate the system, we developed a small benchmark of **5 queries across fiv
 
 ---
 
-## Key Features
-- Works directly in Google Colab for easy setup.
-- Accepts entire folders or single files from Google Drive.
-- Handles mixed and messy datasets without manual preprocessing.
-- Uses Retrieval-Augmented Generation (RAG) for accurate and context-aware responses.
+## Example Query & Response
 
----
+```bash
+Question: [08:03:34] Querying: which city had the highest average temperature in 2012
+<ipython-input-1-c8a8a4d18da9>:439: LangChainDeprecationWarning: The method `BaseRetriever.get_relevant_documents` was deprecated in langchain-core 0.1.46 and will be removed in 1.0. Use :meth:`~invoke` instead.
+  docs = retriever.get_relevant_documents(question)
+
+================================================================================
+Answer (retrieved in 7.03 seconds):
+================================================================================
+The data provided in Document 4 (/content/drive/MyDrive/FileSystemTesting/Temperatures/stl_monthly_temps_1999_2024.csv) shows that for the year 2012, the annual average temperature for the "stl" location was 61.2°F, which was the highest annual average in the data range from 1999 to 2020. However, without temperature data from other cities, I cannot determine which city had the highest average temperature in 2012.
+================================================================================
+```
+
+## 📊 Distribution of Indexed File Types
+
+The system was tested on a dataset containing mixed file formats. Below is the distribution of indexed files during evaluation:
+
+<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/ccec4b7d-2cdf-48e9-9961-c8fd447b18e5" />
+
 
 ## Reference
 Full methodology and results are detailed in our research paper: [https://rb.gy/lwmood](https://rb.gy/lwmood)
